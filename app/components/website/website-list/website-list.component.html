@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-primary fixed-top">
+	<a class="navbar-brand" routerLink="/user/{{uid}}"><i class="fas fa-angle-left"></i></a>
+	<div class="sw-width">
+		<a class="navbar-brand " routerLink="/user/{{uid}}/website"><strong>Websites</strong></a>
+	</div>
+	<i class=" navbar-brand  fas fa-plus"></i>  	
+</nav>
+	
+<div class="container-fluid">
+<br>
+<ul class="list-group">		 	
+<li class="list-group-item" *ngFor = "let website of websites">
+ <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
+ <a class= "float-right" routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog fa-spin"></i></a>
+</li>
+
+</ul>
+
+			 
+			<br>
+		
+	
+    </div>
+	<br>
+
+<nav class="navbar navbar-dark bg-primary fixed-bottom ">
+<a class="navbar-brand " routerLink="/user/:uid/website/new">
+<a class=" sw-width sw-font-white" routerLink="/user/:uid/website/new"><i class=" navbar-brand fas fa-user float-right" ></i></a></a>
+
+
+
+
+</nav>

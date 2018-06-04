@@ -1,0 +1,55 @@
+<nav class="navbar bg-light-1 fixed-top">
+	<a class="btn btn" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget" class="sw-gray"><i class="fas fa-chevron-left"></i>
+    </a>
+  <div class="sw-width">
+	<a class="float-left sw-no-underline" routerLink="user/{{uid}}/website/:wid/page/{{pid}}/widget/new"><b>Widget Edit</b></a>
+  </div>
+	<button [disabled]="f.invalid" type="submit" form="widgetForm" class="btn sw-button-to-a sw-color-black float-right" ><i class="fas fa-check"></i></button>
+	
+</nav>
+  <div class="container-fluid">
+ <form class="widgetForm" (ngSubmit)="update()" #f="ngForm">
+
+	  <div class="form-group">
+ 	   <label>Name</label>
+	   <Input class="form-control" type="text" name="name" ngModel="{{widget.name}}" #name="ngModel" palceholder="Enter your widget name">
+      </div>
+	
+	  <div class="form-group">
+	   <label>Text</label>
+	   <input class="form-control" type="text" name="text" ngModel="{{widget.text}}" #text="ngModel" placeholder="Enter your widget text..."> 
+	  </div>
+        
+      <div class="form-group">
+       <label>URL</label>
+       <input class="form-control" required ngModel="{{widget.url}}" #url="ngModel" type="text" name="url" placeholder="https://www.google.com">
+      </div> 
+		<div class="alert alert-danger" *ngIf="url.invalid && url.touched">Url can't be empty</div>
+	  <div class="form-group">
+	   <label>Width</label>
+	   <input class="form-control" required ngModel="{{widget.width}}" #width="ngModel"  type="text" name="width" placeholder="100%" > 
+	  </div>
+       	<div class="alert alert-danger" *ngIf="width.invalid && width.touched">Width can't be empty!</div>
+	   <div class="form-group">
+	    <label for="Upload">Upload</label>
+		<input class="form-control" type="file" name="upload" placeholder="100%">
+	  </div>
+	
+	        <a class="btn btn-secondary btn-block" routerLink="#">Upload Image</a>
+	        	<button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-block">Submit</button>
+			<button class="btn btn-danger btn-block" type="button" (click)="remove()">Delete</button>
+  </form>
+</div>
+
+
+ <nav class="navbar navbar-dark bg-light-1 fixed-bottom ">
+
+
+	<a class="navbar-brand " routerLink="/user/:uid/website/new"></a>
+	<a class=" sw-width sw-font-black" routerLink="/user/:uid"><i class="fas fa-user float-right" ></i></a>
+
+
+
+
+
+</nav>

@@ -1,0 +1,52 @@
+<nav class="navbar bg-light-1 fixed-top">
+<a class="btn btn" routerLink="/user/:uid/website/wid/page/:pid/widget" class="sw-gray">
+ <i class="fas fa-chevron-left"></i>
+ </a>
+ <div class="sw-width">
+<a class="float-left sw-no-underline" routerLink="#"><b>Widget Edit</b></a>
+ </div>
+<a routerLink="/user/:uid/website/wid/page/:pid/widget" class="sw-font-black float-left ">
+<i class="fas fa-check"></i></a>
+</nav>
+ <div class="container-fluid">
+ <form id="widgetForm" (ngSubmit)="update()" #f="ngForm">
+
+	  <div class="form-group">
+ 	   <label>Name</label>
+	   
+	   <Input  class="form-control"type="text" name="name" ngModel="{{widget.name}}"#name="ngModel" placeholder="Enter Your Widgetname ...." >  
+      </div>
+	
+	  <div class="form-group">
+	   <label>Text</label>
+	   
+	   <input class="form-control" type="text" name="text" ngModel="{{widget.text}}" required #text="ngModel" placeholder="Enter your widget text...."  >
+	  </div>
+        
+        <div class="alert alert-danger" *ngIf="text.invalid && text.touched">Text can't be empty</div>
+     		
+	  <div class="form-group">
+	   <label for="Width">Size</label>
+	   
+	   <input class="form-control" type="number" name="Size" ngModel="{{widget.size}}" required #size="ngModel" placeholder="Enter your widget text"> 
+	  </div>
+    
+	 <div class="alert alert-danger" *ngIf="size.invalid && size.touched">Size can t be Empty</div>
+	<button [disabled]="f.invalid" class="btn btn-primary btn-block" type="Submit">Submit</button>
+	<button type="button"class="btn btn-danger btn-block" (click)="remove()">Delete</button>
+
+  </form>
+</div>
+
+
+ <nav class="navbar navbar-dark bg-light-1 fixed-bottom ">
+
+
+	<a class="navbar-brand " routerLink="/user/:uid/website/new"></a>
+	<a class=" sw-width sw-font-black" routerLink="/user/:uid/website/new"><i class="fas fa-user float-right" ></i></a>
+
+
+
+
+
+</nav>

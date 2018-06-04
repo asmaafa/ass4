@@ -1,0 +1,33 @@
+<nav class="navbar bg-light-1 fixed-top">
+<a class="sw-color-black" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget"><i class="fas fa-chevron-left"></i></a>
+<div class="sw-width">
+<a class="float-left sw-no-underline" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}/widget/new"><b>Choose Widget</b></a></div>
+	
+</nav>
+  <div class="container-fluid">
+ <ul class="list-group list-group-flush"> 
+ <li class="list-group-item"><button class="btn sw-button-to-a" (click)="create('HEADING')">Header</button></li>
+<li class="list-group-item"><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid">Label</a></li>
+<li class="list-group-item"><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid">HTML</a></li>
+<li class="list-group-item"><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid">Text Input</a></li>
+<li class="list-group-item"><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid">Link</a></li>
+<li class="list-group-item"><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid">Button</a></li>
+<li class="list-group-item"><button class="btn sw-button-to-a" (click)="create('IMAGE')">Image</button></li>
+<li class="list-group-item"><button class="btn sw-button-to-a" (click)="create('YOUTUBE')">YouTube</button></li>
+<li class="list-group-item"><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid">Data Table</a></li>
+<li class="list-group-item"><a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid">Repeater</a></li>
+</ul>
+
+ 
+</div>
+
+
+<nav class="navbar navbar-dark bg-light-1 fixed-bottom ">
+<a class="navbar-brand " routerLink="/user/{{uid}}/website/new"></a>
+<a class=" sw-width sw-font-black" routerLink="/user/{{uid}}/website/new"><i class="fas fa-user float-right" ></i></a>
+
+
+
+
+
+</nav>

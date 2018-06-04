@@ -1,0 +1,34 @@
+<nav class="navbar navbar-dark bg-light-1 fixed-top">
+	<a class="btn btn" routerLink="/user/{{uid}}/website/{{wid}}/page" class="sw-black"><i class="fas fa-chevron-left"></i></a>
+ <div class="sw-width">
+	<a class="float-left sw-no-underline" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}"><b>Edit Page</b></a>
+ </div>
+ 
+<button type="submit" [disabled]="f.invalid" form="pageForm" class=" btn sw-button-to-a sw-font-black sw-absolute-right"><i class="fas fa-check "></i></button>
+
+</nav>
+
+	<!-- left websitelist -->
+
+<div class="container-fluid">
+<br>
+ <form id="pageForm" (ngSubmit)="update()" #f="ngForm">	
+<div class="form-group">
+<label ><b>Name</b></label>
+					
+<input class="form-control" required ngModel="{{page.name}}" #name="ngModel" type="text" name="name" placeholder= "Enter your Page Name" value="Blog Post">
+</div>
+<!-- website description -->
+<div *ngIf="name.invalid && name.touched" class="alert alert-info">Name cannot be Empty</div>	
+<div class="form-group">
+<label ><b>Description</b></label>
+					
+<input class="form-control" ngModel="{{page.description}}" type="text" name="description" placeholder="Enter your Page Description" value="Blog"></div><br>
+<button class= "btn btn-primary btn-block" [disabled]="f.invalid" type="submit">Update</button>
+<button class= "btn btn-danger btn-block" (click)="remove()">Delete</button>
+
+</form>	
+<nav class="navbar navbar-dark bg-light-1 fixed-bottom ">
+<a class=" sw-width-1 sw-font-white" routerLink="/user/{{uid}}"><i class="fas fa-user float-right" ></i></a>
+
+</nav>

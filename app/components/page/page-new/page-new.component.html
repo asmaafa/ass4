@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark bg-light-1 fixed-top">
+<a class="btn btn" routerLink="/user/{{uid}}/website/wid/page" class="sw-black"><i class="fas fa-chevron-left"></i></a>
+<div class="sw-width">
+<a class="float-left sw-no-underline" routerLink="/user/{{uid}}/website/{{wid}}/page/{{new}}"><b>New Page</b></a>
+ </div>
+ 
+<button [disabled]="f.invalid" type="submit" form="pageForm" class=" btn sw-button-to-a sw-font-black float-right"><i class="fas fa-check"></i></button>
+
+</nav>
+
+
+
+	
+<div class="container-fluid">
+<form id="pageForm" (ngSubmit)="create()" #f="ngForm">
+ <br>
+				
+<div class="form-group">
+ <label><b>Name</b></label>
+					
+ <input class="form-control"required ngModel #name="ngModel" type="text" name="name" placeholder="Enter your Page Name....">
+</div>
+<div *ngIf="name.invalid && name.touched" class="alert alert-info">Name cannot be Empty</div>						
+<div class="form-group">
+<label><b>Description</b></label>
+<input class="form-control" ngModel #description="ngModel" type="text" name="description" placeholder="Enter your Page Description....">
+<br>
+<button [disabled]="f.invalid" class="btn btn-success btn-block" type="Submit" >Submit</button>
+<a class="btn btn-danger btn-block" routerLink="/user/{{uid}}/website/{{wid}}/page">cancel</a>
+
+</div>
+</form>
+
+
+<nav class="navbar navbar-dark bg-light-1 fixed-bottom ">
+
+
+	
+	<a class=" sw-width-1 sw-font-white" routerLink="/user/{{uid}}"><i class="fas fa-user float-right" ></i></a>
+
+
+
+
+
+</nav>
+
+
+

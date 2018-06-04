@@ -1,0 +1,41 @@
+<nav class="navbar navbar-dark bg-light-1 fixed-top">
+	
+	<a class="btn btn" routerLink="/user/{{uid}}/website" class="sw-black"><i class="fas fa-chevron-left"></i></a>
+	<div class="sw-width">
+	<a class="float-left sw-no-underline" routerLink="/user/{{uid}}/website/{{wid}}/page"><b>Pages</b></a>
+	</div>
+	<a routerLink="/user/{{uid}}/website/{{wid}}/page/new" class="sw-font-black float-left ">
+     <i class="fas fa-plus"></i></a>
+</nav>
+
+  <div class="container-fluid">
+ 
+ <ul class=" list-group list-group-flush"> 
+  <li class="list-group-item" *ngFor="let page of pages">
+  	<a class="sw-color-black" routerLink="/user/{{uid}}/website/{{wid}}/page/{{page._id}}/widget">{{page.name}}</a>
+  	<a class="float-right sw-color-black" routerLink="/user/{{uid}}/website/{{wid}}/page/{{page._id}}"><i class="fas fa-cog"></i></a>
+  </li>
+
+</ul>
+
+ 
+</div>
+	
+
+
+
+
+
+<nav class="navbar navbar-dark bg-light-1 fixed-bottom ">
+
+
+	
+	<a class=" sw-width-1 sw-font-white" routerLink="/user/{{uid}}"><i class="fas fa-user float-right" ></i></a>
+
+
+
+
+
+</nav>
+
+

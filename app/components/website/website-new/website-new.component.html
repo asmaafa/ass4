@@ -1,0 +1,80 @@
+<nav  class="row navbar navbar-dark bg-primary fixed-top ">
+<div class="col-sm-4"> 
+<div class=container-fluid>
+<a class="sw-font-white" routerLink="/user/{{uid}}/website"><i class="fas fa-chevron-left"></i></a>
+<a class="sw-no-underline" routerLink="/user/{{uid}}/website"><b class="sw-font-white">Websites</b></a>
+
+<a routerLink="/user/{{uid}}/website/new" class="sw-font-white float-right"><i class="fas fa-plus"></i></a>
+</div>
+</div>
+
+
+<div class="col-sm-8"> 
+<div class=container-fluid>
+<a class="sw-no-underline" routerLink="/user/{{uid}}/website/new" ><b class="sw-font-white">New Websites</b></a>
+
+<button class="btn sw-color-white float-right sw-button-to-a" type="submit" form="websiteForm" [disabled]="f.invalid"><i class="fas fa-check"></i></button>
+</div>
+</div>
+	</nav>
+	<!-- left websitelist -->
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="container-fluid">
+				 <br>
+<ul class="list-group">
+		
+			 	
+<li class="list-group-item" *ngFor ="let  website of websites">
+ <a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a><a routerLink="/user/:uid/website/:wid"><i class="fas fa-cog fa-spin float-right"></i></a></li>
+
+</ul>
+</div>
+		</div>
+	<!-- right side form -->
+	<div class="col-sm-8">
+		<div class="container-fluid">
+<form id="websiteForm" (ngSubmit)="create()" #f="ngForm">
+				<!-- website name -->
+				
+<div class="form-group">
+<label for="website-name"><b>Name</b></label>
+
+<input class="form-control" type="text" name="name" placeholder="type your website name" requires ngModel #name="ngModel">
+</div>
+<div class=" alert alert-warning" *ngIf="name.invalid && name.touched" >Name cannot be empty</div>
+		<!-- website description -->
+
+ <div class="form-group">
+<label for="website-description">Description</label>
+<br>
+<textarea  rows="5" class="form-control" name="description" placeholder="Describe your website here" ngModel #description="ngModel"></textarea> 
+</div>
+<a routerLink="/user/{{uid}}/website" class="btn btn-danger">cancel</a>
+<button [disabled]= "f.invalid" type="submit"  class="btn btn-success float-right">submit</button>						
+					
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+<nav class="navbar navbar-dark bg-primary fixed-bottom ">
+
+
+	<a class="navbar-brand " routerLink="/user/:uid/website/new">
+	<a class=" sw-width sw-font-white" routerLink="/user/:uid/website/new"><i class=" navbar-brand fas fa-user float-right" ></i></a></a>
+
+
+
+
+
+
+</nav>
+
+
